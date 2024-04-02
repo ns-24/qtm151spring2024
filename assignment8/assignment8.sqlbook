@@ -79,6 +79,10 @@ Hints:
 -- Active: 1710903290079@@127.0.0.1@5432@postgres@public
 -- Write your own code
 
+SELECT * FROM homework_data
+WHERE nationality = 'British'
+ORDER BY driver_name ASC;
+
 
 
 -- SQLBook: Markup
@@ -99,6 +103,9 @@ alies, e.g. ``` ... AS ... ```
 -- Active: 1710903290079@@127.0.0.1@5432@postgres@public
 -- Write your own code
 
+SELECT COUNT(DISTINCT nationality) AS unique_nationalities,
+       COUNT(*) AS total_rows
+FROM homework_data;
 
 
 
@@ -117,6 +124,11 @@ HINT: See the end of lectures 16 for details <br>
 -- SQLBook: Code
 -- Active: 1710903290079@@127.0.0.1@5432@postgres@public
 -- Write your own code
+
+SELECT driver_id, AVG(lap_times) AS average_lap_times
+FROM homework_data
+GROUP BY driver_id
+ORDER BY average_lap_times;
 
 
 
@@ -139,6 +151,11 @@ for the code to work correctly.
 -- SQLBook: Code
 
 # Write your own code
+
+SELECT nationality, SUM(lap_times) AS total_lap_times
+FROM homework_data
+GROUP BY nationality
+HAVING SUM(lap_times) > 150;
 
 
 
@@ -166,6 +183,17 @@ HINT: To insert a string value, use 'single quotations'
 -- SQLBook: Code
 -- Write your own code
 
+DROP TABLE IF EXISTS lap_times;
 
+CREATE TABLE lap_times (
+    "driverId" int,
+    "raceId" int,
+    "driverName" varchar(30),
+    "nationality" varchar(15),
+    "lapTime" int
+);
+
+INSERT INTO lap_times ("driverId", "raceId", "driverName", "nationality", "lapTime")
+VALUES (1, 101, 'Max Verstappen', 'Dutch', 78);
 
 
