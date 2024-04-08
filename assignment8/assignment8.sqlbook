@@ -29,7 +29,7 @@ You need to run "Execute" on each row, line-by-line. This is <br>
 different from Python, which runs the entire chunk.
 
 -- SQLBook: Code
--- Active: 1710903290079@@127.0.0.1@5432@postgres
+-- Active: 1711673316500@@127.0.0.1@5432@localhost
 
 DROP TABLE IF EXISTS homework_data;
 CREATE TABLE homework_data(driver_id int,
@@ -76,7 +76,7 @@ Hints:
 - In SQL you only need a single equality "="
 - In SQL use single quotes for logical conditions with strings '...'
 -- SQLBook: Code
--- Active: 1710903290079@@127.0.0.1@5432@postgres@public
+-- Active: 1711673316500@@127.0.0.1@5432@localhost
 -- Write your own code
 
 SELECT * FROM homework_data
@@ -100,7 +100,7 @@ alies, e.g. ``` ... AS ... ```
 
 
 -- SQLBook: Code
--- Active: 1710903290079@@127.0.0.1@5432@postgres@public
+-- Active: 1711673316500@@127.0.0.1@5432@localhost
 -- Write your own code
 
 SELECT COUNT(DISTINCT nationality) AS unique_nationalities,
@@ -122,7 +122,7 @@ FROM homework_data;
 HINT: See the end of lectures 16 for details <br>
 
 -- SQLBook: Code
--- Active: 1710903290079@@127.0.0.1@5432@postgres@public
+-- Active: 1711673316500@@127.0.0.1@5432@postgres
 -- Write your own code
 
 SELECT driver_id, AVG(lap_times) AS average_lap_times
@@ -149,6 +149,7 @@ HINT: Use ```HAVING SUM(lap_times)``` rather than an alias <br>
 for the code to work correctly.
 
 -- SQLBook: Code
+-- Active: 1711673316500@@127.0.0.1@5432@assignment8
 
 # Write your own code
 
