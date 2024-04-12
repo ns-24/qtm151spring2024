@@ -9,7 +9,7 @@ Add a comment with your Emory ID below
 (just add your name as an SQL comment, <br>
 do not use print())
 -- SQLBook: Code
--- Active: 1710903290079@@127.0.0.1@5432@postgres
+-- Active: 1711673316500@@127.0.0.1@5432@localhost
 -- Write your own code
 
 # Instructor Copy
